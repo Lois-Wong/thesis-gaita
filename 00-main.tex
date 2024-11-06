@@ -262,7 +262,12 @@
 
 
 %%%% BIBLATEX: bibliography package settings
-\addbibresource{\BibFileName}           % name of the bib file 
+%\addbibresource{\BibFileName}           % name of the bib file  %% lois changed here
+
+
+\usepackage[style=apa]{biblatex} % Feel free to change the style to another one you prefer
+\addbibresource{zreferences.bib}
+
 % \DeclareFieldFormat{titlecase}{\MakeSentenceCase*{#1}}
 \AtBeginBibliography{\urlstyle{rm}}     % roman font family for URL (DOI)
 \AtBeginBibliography{\vspace*{8pt}}     % add space for single-spaced bib text
