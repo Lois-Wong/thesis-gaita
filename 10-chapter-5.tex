@@ -1,19 +1,62 @@
 \chapter{Evaluation and Results} \label{chap:chap-5}
 
 
-%% remove the following and add your chapter text here
-\section{Evaluating with AI Agents}
-%\blindtext \parencite{knuth-fa}
 
 \section{Qualitative analysis of system success}
 
+For the qualitative analysis of Gaita, user feedback was gathered through informal channels, which provided valuable insights into the system’s effectiveness. The primary source of user data came from family and friends, who interacted with Gaita in a controlled, informal setting and provided insights on its usability and relevance of its recommendations. Additionally, I presented a demo of Gaita during a research talk, where a small group of colleagues provided additional feedback on the system’s performance and user interface. This provided initial impressions and qualitative feedback on the usability and relevance of the recommendations. While the feedback from these sessions was not formally structured, it offered important observations regarding user engagement, the clarity of the course recommendations, and the overall user experience. These insights will inform future iterations of the system.
+
+
+\subsection{Use of Open Courseware}
+
+One of the key strengths of Gaita is its exclusive use of open-access courses, which has been well-received by users. Users appreciated that the system recommends only freely available educational resources, as this helps bridge accessibility inequities in education. This ensures that high-quality learning materials are accessible to anyone, regardless of their financial situation or geographic location. The emphasis on open access content supports our mission of democratizing education and enabling users from diverse backgrounds to pursue their learning goals without the barrier of cost. 
+
+\subsubsection{Personalization and relevance of recommendations} 
+
+One of the primary goals of Gaita is to provide personalized learning pathways that align with users’ goals, backgrounds, and knowledge levels. The system has shown significant success in this area. Based on user feedback, learners feel that the courses recommended by Gaita align well with their academic or career aspirations. Test users expressed satisfaction with the clarity of the course descriptions and how each recommendation was linked to their specific goals. They found the system's iterative prompting feature, which asks follow-up questions to determine prerequisite knowledge, to be intuitive and helpful in bridging knowledge gaps. 
+
+\subsection{User Experience and Interface}
+
+The user experience and interface of Gaita were designed to be intuitive and simple, leveraging users' familiarity with existing messaging platforms. Users reported that the ability to input prompts in natural language made the system easier to use compared to traditional search systems found on other platforms. They found the conversational approach not only simpler but also more effective, as it captured more context and provided more nuanced, personalized recommendations than existing search-based systems on open courseware platforms.
+
+Additionally, users found the follow-up questions regarding prerequisites are both relevant and helpful. These questions were intentionally designed to be easy to respond to, and enable the system to refine its recommendations and guide learners effectively through the course selection process. Feedback indicated that users appreciated the simplicity and clarity of these questions and found the experience more engaging. 
+
+\subsection{System performance and reliability}
+
+Gaita has demonstrated strong performance in terms of both speed and reliability. The integration of Retrieval-Augmented Generation (RAG), which involves vectorizing courses and comparing them to the user’s input using cosine similarity, has proven efficient and effective in generating relevant course recommendations. A key advantage of using RAG is its ability to mitigate the issue of hallucinations, a common challenge with Large Language Models (LLMs). Unlike vanilla LLMs, which sometimes generate non-existent or irrelevant course recommendations, Gaita ensures that only valid courses are suggested. The GPT-4o Mini component has also met expectations, consistently generating coherent and relevant course descriptions. These descriptions effectively explain how the recommended courses align with the user’s background and goals, providing clear context for each suggestion. Overall, Gaita's performance has been reliable and accurate.
+
 \section{Qualitative analysis of system weaknesses}
+
+\subsection{Inconsistent Formatting of Recommendations}
+
+One weakness identified in Gaita is the inconsistent formatting of the recommendations. At times, course titles or questions are boldfaced, while other times they are not, which leads to a lack of visual consistency. Additionally, the number of newlines between paragraphs can vary, due to the deterministic nature of the LLMs used. Users have provided feedback that they find the inconsistent formatting distracting. They expressed a preference for keeping the questions boldfaced and making the formatting more uniform throughout the system to enhance readability and user experience.
+
+\subsection{Difficulty Handling User Knowledge Claims}
+
+Gaita sometimes struggles when users explicitly state their prior knowledge, such as "I am familiar with coding in Python." In these instances, Gaita may still recommend introductory Python courses, even though the user already has familiarity with the topic. Users have noted that Gaita works best when they specify what they don't know or what they want to learn, rather than stating what they already know. Enhancing the system’s ability to interpret knowledge assertions more accurately would prevent unnecessary recommendations and lead to more effective course suggestions.
+
+\subsection{Dependency on user-provided data}
+
+Gaita depends on the data users provide about their backgrounds and learning goals to generate personalized recommendations. This introduces the risk of incomplete or inaccurate information. If users do not offer sufficient context or lack clarity about their needs, the recommendations may not be as effective. To improve the accuracy of the system, a more comprehensive data collection approach, such as scraping user profiles or having users fill out an assessment form (with consent), could enhance the quality and relevance of the recommendations.
+
+\subsection{Oversimplification of prerequisite mapping}
+
+The iterative prompting system helps users identify prerequisite courses, but it carries the risk of oversimplifying the complexity of learning paths. For example, some advanced courses may require a deep understanding of a broad set of topics, not just a few prerequisites. 
+
+\subsection{Limited ability to suggest learning paths beyond course recommendations}
+
+While Gaita provides excellent course recommendations, it currently does not offer alternative learning paths that could incorporate resources beyond courses, such as textbooks, projects, or practice exercises. A more comprehensive approach to personalized learning could involve suggesting supplementary materials to enhance the learning experience and better support skill development.
 
 \section{Motivation and Discussion for quantitative metrics}
 
 \subsection{compare with existing solutions}
 
+- precision at k without rag
 \subsection{Why it's not logical to compare with vanilla recs}
+
+\section{Evaluating with AI Agents}
+
+
 
 %% this is an example table
 \begin{table}[h!]
@@ -32,5 +75,3 @@ Col1 & Col2 & Col2 & Col3 \\
 \caption{Table to test captions and labels taken from Overleaf.}
 \label{table:1}
 \end{table}
-
-\Blindtext[2]
