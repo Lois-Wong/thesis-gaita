@@ -27,8 +27,7 @@ Gaita's architecture diagram outlines the flow of data and how various component
 
 \item \textbf{User Interaction:} The user interacts with Gaita through a simple and intuitive chatbot interface, where they can provide information about their background and learning goals. This interaction drives the entire recommendation pipeline, ensuring that the system continuously adapts to the learner's evolving needs.
 
-\item \textbf{Deployed via Render:} Gaita is deployed on Render and is accessible at \url{https://gaita.onrender.com}. \textit{Important:} If you encounter a 502 Bad Gateway Error, this is likely because the server is currently spinning up again. Render services can sometimes take a few minutes to become fully operational, so please wait a few minutes before refreshing the page.
-
+\item \textbf{Deployed via Render:} Gaita is deployed on Render and is accessible at \url{https://gaita.onrender.com} \footnotemark[1]. \footnotetext[1] {Important: If you encounter a 502 Bad Gateway Error, this is likely because the server is currently spinning up again. Render services can sometimes take a few minutes to become fully operational, so please wait a few minutes before refreshing the page.}
 
 \end{enumerate}
 
@@ -44,6 +43,7 @@ Web crawling is employed to collect course data from Coursera and MIT OpenCourse
 \subsection{RAG-based Recommendation System}
 
 The recommendation system is based on a Retrieval-Augmented Generation (RAG) approach. After receiving the user input, Cosine similarity is applied to compare the vectorized user input (i.e., their goals) with the vectorized course database. The top 3 most relevant courses are retrieved, and GPT-4o Mini is employed to serve the recommendations with descriptions of how the courses meet the user’s learning objectives.
+
 
 \subsection{Turning Recommendations into Pathways}
 
