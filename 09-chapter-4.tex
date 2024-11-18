@@ -16,14 +16,14 @@ Gaita's architecture diagram outlines the flow of data and how various component
 \begin{enumerate}
 \item \textbf{Scrape CS Courses from Coursera and MIT OCW:} Gaita collects course data from Coursera and MIT OpenCourseWare. These platforms provide high-quality Computer Science courses from leading institutions, ensuring a reliable and diverse range of learning materials.  
 
-\item \textbf{Courses Database:} The courses from these platforms are scraped and stored in a central database. This database contains the titles, descriptions, and URLs of over 1,200 courses.
+\item \textbf{Courses Database:} The courses from these platforms are scraped and stored in a csv file. This database contains the titles, descriptions, and URLs of over 1,200 courses.
 
 \item \textbf{Retriever:} The "Retriever" component is responsible for retrieving the most relevant courses based on the user’s input. Using cosine similarity, the system compares the vectorized user prompt (which includes their goals and learning preferences) with the vectorized course data to identify the top 3 most relevant courses.
 
 
 \item \textbf{GPT-4o Mini:} After retrieving the relevant courses, GPT-4o Mini serves the course recommendations along with descriptions of how each course fits the user’s goals and follow-up questions to gauge the user's comfort with the prerequisites for the recommended courses. 
 
-\item \textbf{Iterative Prompting:} The system uses iterative prompting to create a personalized learning pathway. Based on the user's responses to the follow-up questions, Gaita assesses the user’s current knowledge level and recommends prerequisite courses, if needed, to fill any knowledge gaps. 
+\item \textbf{Iterative Prompting:} The system uses iterative prompting to create a personalized learning pathway. Based on the user's responses to the follow-up questions, Gaita assesses the user’s current knowledge level and recommends prerequisite courses to fill any knowledge gaps. 
 
 \item \textbf{User Interaction:} The user interacts with Gaita through a simple and intuitive chatbot interface, where they can provide information about their background and learning goals. This interaction drives the entire recommendation pipeline, ensuring that the system continuously adapts to the learner's evolving needs.
 
